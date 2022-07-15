@@ -1,54 +1,45 @@
-import './App.css';
+// import React, { useState } from 'react';
 
-import React, { useState } from 'react';
-
-import logo from './logo.svg';
+// import DrawRect from '@/components/rect';
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [fileUrl, setfileUrl] = useState();
+  // const updateChooseArr = (value, type, nextValue) => {
+  //   const temp = [...chooseArrRef.current];
+  //   switch (type) {
+  //     case 'push':
+  //       const nextV = [...temp, { ...value }];
+  //       // setChooseArr(nextV);
+  //       chooseArrRef.current = nextV;
+  //       break;
+  //     case 'replace':
+  //       temp.splice(value, 1, { ...nextValue });
+  //       const nextV1 = [...temp];
+  //       chooseArrRef.current = nextV1;
+  //       // setChooseArr(nextV1);
+  //       break;
+  //     default:
+  //       const nextV2 = [
+  //         ...temp
+  //           .filter((_, index) => index !== value)
+  //           .map((el, index) => ({ ...el, name: index + 1 })),
+  //       ];
+  //       // setChooseArr(nextV2);
+  //       chooseArrRef.current = nextV2;
+  //       break;
+  //   }
+  // };
+  // const chooseArrRef = useRef([]);
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="header">
-          🚀 Vite + React + Typescript 🤘 & <br />
-          Eslint 🔥+ Prettier
-        </p>
+  // const canvasContainerSize = {};
 
-        <div className="body">
-          <button onClick={() => setCount((count) => count + 1)}>
-            🪂 Click me : {count}
-          </button>
-
-          <p> Don&apos;t forgot to install Eslint and Prettier in Your Vscode.</p>
-
-          <p>
-            Mess up the code in <code>App.tsx </code> and save the file.
-          </p>
-          <p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-            {' | '}
-            <a
-              className="App-link"
-              href="https://vitejs.dev/guide/features.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Vite Docs
-            </a>
-          </p>
-        </div>
-      </header>
-    </div>
-  );
+  return null;
+  // <DrawRect
+  //   canvasContainerSize={canvasContainerSize}
+  //   setChooseArr={updateChooseArr}
+  //   chooseArrRef={chooseArrRef}
+  //   fileUrl={fileUrl}
+  // />
 }
 
 export default App;
