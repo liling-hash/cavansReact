@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 
-import img from '../resources/screenshot.png';
-import DrawRect from './components/rect/index';
+import DrawRect from '@/components/rect';
+import img from '@@/screenshot.png';
 const canvasContainerSize = {
   containerW: 1000,
   containerH: 1000,
