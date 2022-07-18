@@ -2,9 +2,9 @@
 import classNames from 'classnames';
 import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
 
-import delall from '../resources/delall.svg';
-import delIcon from '../resources/delIcon.svg';
-import draw from '../resources/draw.svg';
+import delall from '../../../resources/delall.svg';
+import delIcon from '../../../resources/delIcon.svg';
+import draw from '../../../resources/draw.svg';
 import styles from './index.module.less';
 type rectObject = { [k: string]: number };
 

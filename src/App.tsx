@@ -1,45 +1,50 @@
-// import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
-// import DrawRect from '@/components/rect';
+import img from '../resources/screenshot.png';
+import DrawRect from './components/rect/index';
+const canvasContainerSize = {
+  containerW: 1000,
+  containerH: 1000,
+  top: 100,
+  left: 100,
+};
 
 function App() {
-  // const [fileUrl, setfileUrl] = useState();
-  // const updateChooseArr = (value, type, nextValue) => {
-  //   const temp = [...chooseArrRef.current];
-  //   switch (type) {
-  //     case 'push':
-  //       const nextV = [...temp, { ...value }];
-  //       // setChooseArr(nextV);
-  //       chooseArrRef.current = nextV;
-  //       break;
-  //     case 'replace':
-  //       temp.splice(value, 1, { ...nextValue });
-  //       const nextV1 = [...temp];
-  //       chooseArrRef.current = nextV1;
-  //       // setChooseArr(nextV1);
-  //       break;
-  //     default:
-  //       const nextV2 = [
-  //         ...temp
-  //           .filter((_, index) => index !== value)
-  //           .map((el, index) => ({ ...el, name: index + 1 })),
-  //       ];
-  //       // setChooseArr(nextV2);
-  //       chooseArrRef.current = nextV2;
-  //       break;
-  //   }
-  // };
-  // const chooseArrRef = useRef([]);
+  // eslint-disable-next-line no-unused-vars
+  const [fileUrl, setfileUrl] = useState<string>(img);
+  const chooseArrRef = useRef<any[]>([]);
+  const updateChooseArr = (value: number | any, type: any, nextValue: any) => {
+    const temp = [...chooseArrRef.current];
+    switch (type) {
+      case 'push':
+        chooseArrRef.current = [...temp, { ...value }];
+        break;
+      case 'replace':
+        temp.splice(value, 1, { ...nextValue });
+        chooseArrRef.current = temp;
+        break;
+      default:
+        chooseArrRef.current = [
+          ...temp
+            .filter((_: any, index: number) => index !== value)
+            .map((el: any, index: number) => ({ ...el, name: index + 1 })),
+        ];
+        break;
+    }
+  };
 
-  // const canvasContainerSize = {};
-
-  return null;
-  // <DrawRect
-  //   canvasContainerSize={canvasContainerSize}
-  //   setChooseArr={updateChooseArr}
-  //   chooseArrRef={chooseArrRef}
-  //   fileUrl={fileUrl}
-  // />
+  return (
+    <div
+      style={{ marginTop: canvasContainerSize.top, marginLeft: canvasContainerSize.left }}
+    >
+      <DrawRect
+        canvasContainerSize={canvasContainerSize}
+        setChooseArr={updateChooseArr}
+        chooseArrRef={chooseArrRef}
+        fileUrl={fileUrl}
+      />
+    </div>
+  );
 }
 
 export default App;

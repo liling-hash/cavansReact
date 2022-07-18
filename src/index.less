@@ -9,3 +9,162 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+//布局
+each(range(0, 100, 2), {
+  .pd-@{value} {
+    padding: (@value * 1px) !important;
+  }
+
+  .pdt-@{value} {
+    padding-top: (@value * 1px) !important;
+  }
+
+  .pdb-@{value} {
+    padding-bottom: (@value * 1px) !important;
+  }
+
+  .pdl-@{value} {
+    padding-left: (@value * 1px) !important;
+  }
+
+  .pdr-@{value} {
+    padding-right: (@value * 1px) !important;
+  }
+
+  .mg-@{value} {
+    margin: (@value * 1px) !important;
+  }
+
+  .mgt-@{value} {
+    margin-top: (@value * 1px) !important;
+  }
+
+  .mgb-@{value} {
+    margin-bottom: (@value * 1px) !important;
+  }
+
+  .mgl-@{value} {
+    margin-left: (@value * 1px) !important;
+  }
+
+  .mgr-@{value} {
+    margin-right: (@value * 1px) !important;
+  }
+});
+
+.mg-auto {
+  margin: auto;
+}
+
+//font
+@fonts: 12, 14, 16, 20, 24, 30, 38, 46, 56, 68;
+
+each(@fonts, {
+  .ft-@{value} {
+    font-size: (@value * 1px) !important;
+    line-height: (@value * 1px + 8px) !important;
+  }
+})
+
+.clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+/*单行溢出*/
+.one-txt-cut {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
+}
+.break-word{
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.mg-auto {
+  margin: auto;
+}
+
+.df {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.hidden {
+  display: none;
+}
+.block{
+  display: block;
+}
+
+.flex-d-column {
+  flex-direction: column !important;
+}
+
+.flex-d-row {
+  flex-direction: row !important;
+}
+
+.flex-warp {
+  flex-wrap: wrap;
+}
+
+.w-full {
+  width: 100vw
+}
+
+.h-full {
+  width: 100vh
+}
+
+.whole-width {
+  width: 100%;
+}
+
+.whole-height {
+  height: 100%;
+}
+
+.f-center {
+  justify-content: center;
+  align-items: center;
+}
+.f-no-center{
+  justify-content:start;
+  align-items:flex-start;
+}
+.over-h{
+  overflow: hidden;
+}
